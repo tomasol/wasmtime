@@ -391,6 +391,7 @@ async fn async_host_func_with_pooling_stacks() -> Result<()> {
     let func = linker.get(&mut store, "", "").unwrap().into_func().unwrap();
     run_smoke_test(&mut store, func).await;
     run_smoke_typed_test(&mut store, func).await;
+    let _ = store.into_data();
     Ok(())
 }
 
